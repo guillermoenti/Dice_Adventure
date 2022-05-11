@@ -8,10 +8,13 @@ public class DiceScript : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] private Vector3 diceVelocity;
 
+    private bool isInAir;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        isInAir = false;
     }
 
     // Update is called once per frame
@@ -19,9 +22,17 @@ public class DiceScript : MonoBehaviour
     {
         diceVelocity = rb.velocity;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!isInAir && Input.GetKeyDown(KeyCode.Space))
         {
+            isInAir = true;
             RollTheDice();
+        }
+
+        Debug.Log(Mathf.Abs(rb.velocity.y));
+
+        if (rb.velocity.y == 0)
+        {
+            isInAir = false;
         }
     }
 
@@ -37,4 +48,5 @@ public class DiceScript : MonoBehaviour
         rb.AddForce(transform.up * 500);
         rb.AddTorque(dirX, dirY, dirZ);
     }
+
 }
