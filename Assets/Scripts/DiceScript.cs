@@ -22,13 +22,7 @@ public class DiceScript : MonoBehaviour
     {
         diceVelocity = rb.velocity;
 
-        if (!isInAir && Input.GetKeyDown(KeyCode.Space))
-        {
-            isInAir = true;
-            RollTheDice();
-        }
-
-        Debug.Log(Mathf.Abs(rb.velocity.y));
+        //Debug.Log(Mathf.Abs(rb.velocity.y));
 
         if (rb.velocity.y == 0)
         {
@@ -36,11 +30,11 @@ public class DiceScript : MonoBehaviour
         }
     }
 
-    void RollTheDice()
+    public void RollTheDice()
     {
-        float dirX = Random.Range(0, 500);
-        float dirY = Random.Range(0, 500);
-        float dirZ = Random.Range(0, 500);
+        float dirX = Random.Range(-1000, 1000);
+        float dirY = Random.Range(-1000, 1000);
+        float dirZ = Random.Range(-1000, 1000);
 
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         transform.rotation = Quaternion.identity;

@@ -4,23 +4,27 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
     private InputManager inputManager;
     private Transform cameraTransform;
+    private Animator animator;
 
-    [SerializeField]
-    private float playerSpeed = 2.0f;
-    [SerializeField]
-    private float jumpHeight = 1.0f;
-    [SerializeField]
-    private float gravityValue = -9.81f;
+    private Vector3 playerVelocity;
+    private bool groundedPlayer;
 
-    private void Start()
+    private int speedHash;
+
+    [SerializeField] private float playerSpeed = 2.0f;
+    [SerializeField] private float jumpHeight = 1.0f;
+    [SerializeField] private float gravityValue = -9.81f;
+
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
+        animator = GetComponent<Animator>();
+
+        SetAnimatorHashes();
     }
 
     void Update()
@@ -47,5 +51,16 @@ public class PlayerScript : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+
+    private void HandleAnimations()
+    {
+        //animator.SetFloat(speedHash, )
+    }
+
+    private void SetAnimatorHashes()
+    {
+        speedHash = Animator.StringToHash("speed");
     }
 }

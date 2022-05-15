@@ -54,4 +54,9 @@ public class InputManager : MonoBehaviour
     {
         return playerControls.Player.Jump.triggered;
     }
+
+    public bool HasPlayerInteractedThisFrame()
+    {
+        return playerControls.Player.Interact.triggered;
+    }
 }
