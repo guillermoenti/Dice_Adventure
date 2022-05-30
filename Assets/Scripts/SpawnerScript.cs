@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnerScript : MonoBehaviour
 {
-    [SerializeField] private int spawnSecconds = 10;
+    [SerializeField] private int spawnSecconds = 60;
     private bool bCanSpawnAgain = true;
 
     // Start is called before the first frame update

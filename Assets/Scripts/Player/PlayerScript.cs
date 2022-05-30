@@ -19,6 +19,8 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField] GameObject model;
 
+    [SerializeField] LayerMask interactLayerMask;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -52,6 +54,11 @@ public class PlayerScript : MonoBehaviour
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
 
+        if (inputManager.HasPlayerInteractedThisFrame())
+        {
+            Interact();
+        }
+
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
@@ -66,4 +73,22 @@ public class PlayerScript : MonoBehaviour
     {
         speedHash = Animator.StringToHash("speed");
     }
+
+    private void Interact()
+    {
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.TransformDirection(Vector3.forward), out hit, 100f, interactLayerMask))
+        {
+            if (hit.collider)
+            {
+                hit.transform.TryGetComponent(out Interactable interactable);
+                if (interactable)
+                {
+                    interactable.OnInteract();
+                }
+            }
+        }
+    }
 }
+

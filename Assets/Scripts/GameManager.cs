@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int numberOfPortals = 3;
     public int numberOfKeys = 3;
 
+    public int torchesActivated = 0;
+
     private void Awake()
     {
 
@@ -22,5 +24,11 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
 
+    }
+
+    private void Start()
+    {
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 }
