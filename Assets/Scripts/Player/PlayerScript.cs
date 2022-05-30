@@ -17,6 +17,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
 
+    [SerializeField] GameObject model;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -42,6 +44,7 @@ public class PlayerScript : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         controller.transform.forward = new Vector3(cameraTransform.forward.x, controller.transform.forward.y, cameraTransform.forward.z);
+        model.transform.forward = new Vector3(controller.transform.forward.x, cameraTransform.transform.forward.y, controller.transform.forward.z);
 
         // Changes the height position of the player..
         if (inputManager.HasPlayerJumpedThisFrame() && groundedPlayer)
