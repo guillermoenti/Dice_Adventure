@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    protected float canBeInteracted;
+    public bool canBeInteracted = true;
     public virtual void OnInteract() {}
 
 }

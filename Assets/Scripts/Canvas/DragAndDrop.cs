@@ -18,6 +18,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         parentToReturn = transform.parent;
         canvasGroup.blocksRaycasts = false;
         transform.SetParent(transform.parent.parent);
+       
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -27,8 +28,8 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = true;
         transform.SetParent(parentToReturn);
+        canvasGroup.blocksRaycasts = true;
     }
 
     public void DestroyItem()

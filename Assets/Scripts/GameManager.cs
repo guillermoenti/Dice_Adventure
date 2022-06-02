@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public int keysActivated = 0;
 
     public int playerMaxHealth;
+    public int damage;
+    public int attackSpeed;
+    public int blocking;
 
     private DoorsManager door;
 
@@ -46,5 +49,18 @@ public class GameManager : MonoBehaviour
         {
             door.OpenDoors();
         }
+    }
+
+    public void SetStats(int _damage, int health, int _attackSpeed, int block, int spawners)
+    {
+        damage = _damage;
+        playerMaxHealth = health * 10;
+        attackSpeed = _attackSpeed;
+        blocking = block;
+        numberOfPortals = (spawners / 3);
+        numberOfPortals = Mathf.Clamp(numberOfPortals, 1, 7);
+        numberOfKeys = 8 - numberOfPortals;
+
+        Debug.Log(damage + " " + playerMaxHealth + " " + attackSpeed + " " + blocking + " " + numberOfPortals + " " + numberOfKeys);
     }
 }
