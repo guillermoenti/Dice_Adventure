@@ -12,24 +12,19 @@ public class DiceThrower : Interactable
 
     [SerializeField] private GameObject canvas;
 
+    [SerializeField] private GameObject playerHUD;
+
     public override void OnInteract()
     {
-        SwitchState();
-        Debug.Log("Interact");
+        GoToDiceThrower();
     }
 
-    private void SwitchState()
+    private void GoToDiceThrower()
     {
-        if (playerCamera)
-        {
-            animator.Play("DiceCamera");
-            canvas.SetActive(true);
-        }
-        else
-        {
-            animator.Play("PlayerCamera");
-            canvas.SetActive(false);
-        }
-        playerCamera = !playerCamera;
+        animator.Play("DiceCamera");
+        playerHUD.SetActive(false);
+        canvas.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

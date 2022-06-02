@@ -10,6 +10,25 @@ public class DoorsManager : MonoBehaviour
 
     [SerializeField] WayPoint wayPoint;
 
+    [SerializeField] EnemyAI boss;
+
+    private bool playerHasEntered = false;
+
+    private void Start()
+    {
+        boss.canWalk = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !playerHasEntered)
+        {
+            boss.canWalk = true;
+
+            //Esto puede ahorrar poblemas con el canWalk del jefe, para que funcione cómo de normal
+            playerHasEntered = true;
+        }
+    }
 
     public void OpenDoors()
     {

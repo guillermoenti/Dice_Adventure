@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] EnemyWeapon weapon;
 
     //ESTÁ EN ANIMACION :)
-    [SerializeField] bool canWalk = true;
+    public bool canWalk = true;
 
     private bool canAttack = true;
 
