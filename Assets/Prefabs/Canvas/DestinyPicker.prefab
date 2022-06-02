@@ -1027,6 +1027,7 @@ GameObject:
   - component: {fileID: 7286434543787038135}
   - component: {fileID: 1680739210552216790}
   - component: {fileID: 7460015207269491923}
+  - component: {fileID: 6974681289972235888}
   m_Layer: 0
   m_Name: Die (5)
   m_TagString: Untagged
@@ -1104,6 +1105,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6974681289972235888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119902945701961213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35de126036e19dd44b22e94b47c880a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentToReturn: {fileID: 8507216070093177203}
 --- !u!1 &2233483397903570352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,6 +1130,7 @@ GameObject:
   - component: {fileID: 7602672137522163026}
   - component: {fileID: 161886517160487705}
   - component: {fileID: 7118848917765348230}
+  - component: {fileID: 1755116900314914584}
   m_Layer: 0
   m_Name: Die (3)
   m_TagString: Untagged
@@ -1193,6 +1208,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1755116900314914584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233483397903570352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35de126036e19dd44b22e94b47c880a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentToReturn: {fileID: 8507216070093177203}
 --- !u!1 &2270357712014757869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,6 +1233,7 @@ GameObject:
   - component: {fileID: 4025677723288989630}
   - component: {fileID: 4484451202647921152}
   - component: {fileID: 6977246492841837911}
+  - component: {fileID: 1571888714450173193}
   m_Layer: 0
   m_Name: Die (4)
   m_TagString: Untagged
@@ -1282,6 +1311,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1571888714450173193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270357712014757869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35de126036e19dd44b22e94b47c880a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentToReturn: {fileID: 8507216070093177203}
 --- !u!1 &2440949472687953952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,6 +1969,7 @@ GameObject:
   - component: {fileID: 620951843574726208}
   - component: {fileID: 4954144932970348425}
   - component: {fileID: 5967416327954868191}
+  - component: {fileID: 5284385034806938300}
   m_Layer: 0
   m_Name: Die (1)
   m_TagString: Untagged
@@ -2004,6 +2047,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &5284385034806938300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614257354413528588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35de126036e19dd44b22e94b47c880a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentToReturn: {fileID: 8507216070093177203}
 --- !u!1 &4013041893398460130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,6 +2493,7 @@ GameObject:
   - component: {fileID: 5015898853575834683}
   - component: {fileID: 1212134103483610999}
   - component: {fileID: 1732819661858342030}
+  - component: {fileID: 7754363017510854168}
   m_Layer: 0
   m_Name: Die (2)
   m_TagString: Untagged
@@ -2514,6 +2571,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &7754363017510854168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140023199410762159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35de126036e19dd44b22e94b47c880a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentToReturn: {fileID: 8507216070093177203}
 --- !u!1 &7142006205935447796
 GameObject:
   m_ObjectHideFlags: 0
