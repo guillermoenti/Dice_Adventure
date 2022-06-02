@@ -18,16 +18,21 @@ public class ActivatorScript : Interactable
 
     private DoorsManager doors;
 
+    AudioSource audioSource;
+
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
         doors = FindObjectOfType<DoorsManager>();
+        
     }
 
     private void Start()
     {
         light.SetActive(false);
         particles.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void OnInteract()
@@ -46,5 +51,6 @@ public class ActivatorScript : Interactable
         //Play sounds
         GameManager.instance.KeyActivated();
         GetComponent<WayPoint>().enabled = false;
+        audioSource.Play();
     }
 }

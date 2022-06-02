@@ -21,7 +21,7 @@ public class NPCHealth : MonoBehaviour
         if (currentHealth <= 0) Death();
     }
 
-    protected virtual void Death()
+    public virtual void Death()
     {
         Debug.Log("Me muero");
         Destroy(gameObject);

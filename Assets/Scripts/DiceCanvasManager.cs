@@ -15,9 +15,17 @@ public class DiceCanvasManager : MonoBehaviour
 
     [SerializeField] GameObject[] dicePlaced = new GameObject[5];
 
+    AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     public void StartTheRoll()
     {
         button.SetActive(false);
+        audio.Play();
         StartCoroutine(ActivateDestinyCanvas());
     }
 
