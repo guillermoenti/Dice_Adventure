@@ -32,14 +32,14 @@ public class DiceScript : MonoBehaviour
 
     public void RollTheDice()
     {
-        float dirX = Random.Range(-1000, 1000);
-        float dirY = Random.Range(-1000, 1000);
-        float dirZ = Random.Range(-1000, 1000);
+        float dirX = Random.Range(-10000, 10000);
+        float dirY = Random.Range(-10000, 10000);
+        float dirZ = Random.Range(-10000, 10000);
 
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
         transform.rotation = Quaternion.identity;
 
-        rb.AddForce(transform.up * 500);
+        rb.AddForce(transform.up * 250);
         rb.AddTorque(dirX, dirY, dirZ);
     }
 

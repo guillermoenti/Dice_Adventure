@@ -9397,6 +9397,7 @@ GameObject:
   - component: {fileID: 6644412111513987143}
   - component: {fileID: 4952706726980215174}
   - component: {fileID: 8625236503126383024}
+  - component: {fileID: 6666730841639312615}
   m_Layer: 8
   m_Name: Activator
   m_TagString: Untagged
@@ -9532,3 +9533,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0.5755231, z: 0}
+--- !u!114 &6666730841639312615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7883625599825417224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ada94c42e2adb4abb72a6324c3dcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wPPrefab: {fileID: 3605687225715308600, guid: d721529c81d98824aa24e32cd6457456, type: 3}
+  minScale: 0.5
+  maxScale: 1

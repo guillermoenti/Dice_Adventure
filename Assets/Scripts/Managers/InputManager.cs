@@ -59,4 +59,20 @@ public class InputManager : MonoBehaviour
     {
         return playerControls.Player.Interact.triggered;
     }
+
+    public bool HasPlayerAttackedThisFrame()
+    {
+        return playerControls.Player.Attack.triggered;
+    }
+
+    public float GetBlockData()
+    {
+        return playerControls.Player.Block.ReadValue<float>();
+    }
+
+    public bool HasPlayerPausedThisFrame()
+    {
+        return playerControls.Player.Pause.triggered;
+    }
+
 }

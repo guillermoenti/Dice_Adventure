@@ -6,12 +6,13 @@ public class PlayerScript : MonoBehaviour
     private CharacterController controller;
     private InputManager inputManager;
     private Transform cameraTransform;
-    private Animator animator;
+
+    [SerializeField] private Weapon weapon;
 
     private Vector3 playerVelocity;
     private bool groundedPlayer;
 
-    private int speedHash;
+    //private int speedHash;
 
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float jumpHeight = 1.0f;
@@ -26,12 +27,23 @@ public class PlayerScript : MonoBehaviour
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
-        animator = GetComponent<Animator>();
-
-        SetAnimatorHashes();
+        //animator = GetComponent<Animator>();
     }
 
+
     void Update()
+    {
+        Movement();
+
+        if (inputManager.HasPlayerInteractedThisFrame())
+        {
+            Interact();
+        }
+
+
+    }
+
+    private void Movement()
     {
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
@@ -46,17 +58,12 @@ public class PlayerScript : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         controller.transform.forward = new Vector3(cameraTransform.forward.x, controller.transform.forward.y, cameraTransform.forward.z);
-        model.transform.forward = new Vector3(controller.transform.forward.x, cameraTransform.transform.forward.y, controller.transform.forward.z);
+        //model.transform.forward = new Vector3(controller.transform.forward.x, cameraTransform.transform.forward.y, controller.transform.forward.z);
 
         // Changes the height position of the player..
         if (inputManager.HasPlayerJumpedThisFrame() && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        }
-
-        if (inputManager.HasPlayerInteractedThisFrame())
-        {
-            Interact();
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
@@ -69,10 +76,6 @@ public class PlayerScript : MonoBehaviour
         //animator.SetFloat(speedHash, )
     }
 
-    private void SetAnimatorHashes()
-    {
-        speedHash = Animator.StringToHash("speed");
-    }
 
     private void Interact()
     {
@@ -90,5 +93,6 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+
 }
 

@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour
     public int numberOfPortals = 3;
     public int numberOfKeys = 3;
 
-    public int torchesActivated = 0;
+    public int keysActivated = 0;
+
+    public int playerMaxHealth;
+
+    private DoorsManager door;
 
     private void Awake()
     {
@@ -28,7 +32,19 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        door = FindObjectOfType<DoorsManager>();
+    }
+
+    public void KeyActivated()
+    {
+        keysActivated++;
+
+        if(keysActivated == numberOfKeys)
+        {
+            door.OpenDoors();
+        }
     }
 }

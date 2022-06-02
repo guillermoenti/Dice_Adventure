@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiceThrower : MonoBehaviour
+public class DiceThrower : Interactable
 {
     [SerializeField] private Animator animator;
 
@@ -12,32 +12,10 @@ public class DiceThrower : MonoBehaviour
 
     [SerializeField] private GameObject canvas;
 
-    private void Update()
+    public override void OnInteract()
     {
-        if (isPlayerInside)
-        {
-            if (InputManager.Instance.HasPlayerInteractedThisFrame())
-            {
-                Debug.Log("Press");
-                SwitchState();
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            isPlayerInside = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            isPlayerInside = false;
-        }
+        SwitchState();
+        Debug.Log("Interact");
     }
 
     private void SwitchState()
