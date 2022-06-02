@@ -81879,6 +81879,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6057253140242728212, guid: fa57b5601789523418203d1c256b2cc4, type: 3}
+      propertyPath: m_text
+      value: 'Programador: Guillermo Barrasa
+
+
+        Game and Level Designer: Guillermo
+        Barrasa
+
+
+        Art: Synty Studios
+
+
+        Audio: SoundSnap'
+      objectReference: {fileID: 0}
     - target: {fileID: 6231411229345780019, guid: fa57b5601789523418203d1c256b2cc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
