@@ -10,7 +10,7 @@ public class WayPoint : MonoBehaviour
 
     [SerializeField] GameObject wPPrefab;
 
-    public GameObject obj;
+    private GameObject obj;
 
     private CanvasGroup wayPointGroup;
     private Image pyraWayPoint;

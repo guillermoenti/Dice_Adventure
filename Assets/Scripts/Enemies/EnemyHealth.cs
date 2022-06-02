@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : NPCHealth
 {
+
+
     public override void OnDamage(int damage)
     {
         base.OnDamage(damage);

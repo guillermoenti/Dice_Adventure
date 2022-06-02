@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class BossHealth : MonoBehaviour
+public class BossHealth : NPCHealth
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnDamage(int damage)
     {
-        
+        base.OnDamage(damage);
+
+        SceneManager.LoadScene(0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public int maxDamage;
     [HideInInspector] public int damage;
 
     Animator anim;
@@ -16,10 +15,13 @@ public class Weapon : MonoBehaviour
 
     private bool isBlocking = false;
 
+    private PlayerHealth player;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
         inputManager = InputManager.Instance;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     private void Update()
@@ -31,10 +33,12 @@ public class Weapon : MonoBehaviour
         if(inputManager.GetBlockData() == 0)
         {
             isBlocking = false;
+            player.isBeingBlocked = false;
         }
         else
         {
             isBlocking = true;
+            player.isBeingBlocked = true;
         }
 
         anim.SetBool("isBlocking", isBlocking);

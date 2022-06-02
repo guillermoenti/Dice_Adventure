@@ -13,6 +13,8 @@ public class EnemyWeapon : MonoBehaviour
 
     InputManager inputManager;
 
+    bool isBeingBlocked = false;
+
     private void Awake()
     {
         inputManager = InputManager.Instance;
@@ -34,21 +36,16 @@ public class EnemyWeapon : MonoBehaviour
         if (dealsDamage)
         {
             if (other.TryGetComponent(out PlayerHealth player)){
-                Debug.Log(damage);
-                player.GetHit(damage);
+                if (isBeingBlocked)
+                {
+                    player.GetHit(damage / 2);
+                }
+                else
+                {
+                    player.GetHit(damage);
+                }
             }
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-
-    }
-
-    private void HandleAnimation()
-    {
-
-    }
-
 
 }

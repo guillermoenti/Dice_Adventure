@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public int attackSpeed;
     public int blocking;
 
-    private DoorsManager door;
+    public DoorsManager door;
 
     private void Awake()
     {
@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        door = FindObjectOfType<DoorsManager>();
     }
 
     public void KeyActivated()
