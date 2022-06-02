@@ -9,6 +9,12 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject tutorial;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(1);
