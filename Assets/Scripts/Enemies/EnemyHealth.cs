@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class EnemyHealth : NPCHealth
 {
-    private AudioSource audio;
+    private EnemyAudio audio;
 
-    [SerializeField] AudioClip audioHit;
-    [SerializeField] AudioClip audioDie;
+    [SerializeField] GameObject audioDeathGO;
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audio = GetComponent<EnemyAudio>();
     }
 
     public override void OnDamage(int damage)
     {
         base.OnDamage(damage);
-        audio.PlayOneShot(audioHit);
+        audio.PlayHit();
     }
 
     public override void Death()
     {
 
-        audio.PlayOneShot(audioDie);
+        Instantiate(audioDeathGO, transform.position, Quaternion.identity);
         base.Death();
 
     }

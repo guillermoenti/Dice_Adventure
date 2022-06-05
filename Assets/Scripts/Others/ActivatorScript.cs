@@ -40,6 +40,7 @@ public class ActivatorScript : Interactable
         if (!isActivated)
         {
             isActivated = true;
+            audioSource.Play();
             anim.SetTrigger("Activate");
         }
     }
@@ -51,6 +52,5 @@ public class ActivatorScript : Interactable
         //Play sounds
         GameManager.instance.KeyActivated();
         GetComponent<WayPoint>().enabled = false;
-        audioSource.Play();
     }
 }

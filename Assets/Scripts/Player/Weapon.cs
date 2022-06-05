@@ -17,17 +17,16 @@ public class Weapon : MonoBehaviour
 
     private PlayerHealth player;
 
-    private AudioSource audio;
-    [SerializeField] AudioClip audio1;
-    [SerializeField] AudioClip audio2;
+    private WeaponAudio wa;
+
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         inputManager = InputManager.Instance;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        audio = GetComponent<AudioSource>();
         damage = GameManager.instance.damage;
+        wa = GetComponent<WeaponAudio>();
     }
 
     private void Update()
@@ -89,15 +88,4 @@ public class Weapon : MonoBehaviour
 
     }
 
-    private void PlaySound()
-    {
-        if(Random.Range(0, 2) == 1)
-        {
-            audio.PlayOneShot(audio1);
-        }
-        else
-        {
-            audio.PlayOneShot(audio2);
-        }
-    }
 }

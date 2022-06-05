@@ -22,6 +22,10 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField] LayerMask interactLayerMask;
 
+    [SerializeField] PlayerAudio aud;
+
+    float timer = 0;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -39,8 +43,6 @@ public class PlayerScript : MonoBehaviour
         {
             Interact();
         }
-
-
     }
 
     private void Movement()
@@ -56,6 +58,13 @@ public class PlayerScript : MonoBehaviour
         move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
         move.y = 0;
         controller.Move(move * Time.deltaTime * playerSpeed);
+
+        if ((movement.x > 0 || movement.y > 0) && groundedPlayer && timer > 0.5f)
+        {
+            aud.PlayFootstep();
+            timer = 0;
+        }
+        timer += Time.deltaTime;
 
         controller.transform.forward = new Vector3(cameraTransform.forward.x, controller.transform.forward.y, cameraTransform.forward.z);
         //model.transform.forward = new Vector3(controller.transform.forward.x, cameraTransform.transform.forward.y, controller.transform.forward.z);
