@@ -12,9 +12,12 @@ public class PauseManager : MonoBehaviour
 
     private bool isPaused;
 
+    AudioSource audio;
+
     private void Awake()
     {
         inputManager = InputManager.Instance;
+        audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -32,11 +35,13 @@ public class PauseManager : MonoBehaviour
 
     public void ClosePause()
     {
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         gameCanvas.gameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(false);
         Time.timeScale = 1;
+        audio.Play();
     }
 
     public void MainMenu()
@@ -44,6 +49,7 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
+        audio.Play();
         SceneManager.LoadScene(0);
     }
 }

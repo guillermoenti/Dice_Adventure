@@ -9,6 +9,13 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject tutorial;
 
+    AudioSource audio;
+
+    private void Awake()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -17,26 +24,31 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartGame()
     {
+        audio.Play();
         SceneManager.LoadScene(1);
     }
 
     public void OpenCredits()
     {
+        audio.Play();
         credits.gameObject.SetActive(true);
     }
 
     public void OpenTutorial()
     {
+        audio.Play();
         tutorial.gameObject.SetActive(true);
     }
 
     public void ExitGame()
     {
+        audio.Play();
         Application.Quit();
     }
 
     public void CloseActualWindow()
     {
+        audio.Play();
         if (credits.gameObject.activeSelf)
         {
             credits.SetActive(false);
